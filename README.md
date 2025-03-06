@@ -15,7 +15,7 @@ testing.
    `volumes` section:
 
    ```
-   - ./cs362-cold-beverages-Wi2024:/home/user/cs362-cold-beverages
+   - ./cs362-cold-beverages:/home/user/cs362-cold-beverages
    ```
 
 4. Run the container. You should be able to see your
