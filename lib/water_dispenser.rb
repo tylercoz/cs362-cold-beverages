@@ -11,7 +11,7 @@ class WaterDispenser
   end
 
   def current_volume
-    @reservoir.current_water_volume
+    @reservoir.volume
   end
 
 end
