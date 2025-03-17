@@ -17,7 +17,8 @@ class WaterReservoir
   end
 
   def drain(volume)
-    @volume -= volume
+    @volume = [0, @volume - volume].max # Is this what god intended?
+    [@volume, volume].min
   end
 
 end
