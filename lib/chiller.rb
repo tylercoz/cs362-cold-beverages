@@ -1,12 +1,11 @@
 class Chiller
 
-  ROOM_TEMPERATURE = 70
+  attr_reader :capacity, :temperature, :power, :contents
 
-  attr_reader :capacity, :temperature
-
-  def initialize(capacity = 100)
+  def initialize(capacity: 100, room_temperature: 70)
     @capacity = capacity
-    @temperature = ROOM_TEMPERATURE
+    @room_temperature = room_temperature
+    @temperature = @room_temperature
     @power = :off
     @contents = []
   end
@@ -24,11 +23,15 @@ class Chiller
   end
 
   def remaining_capacity
-    capacity - @contents.map(&:volume).reduce(:+).to_i
+    remaining = @capacity
+    @contents.each do |item|
+      remaining -= item.volume
+    end
+    remaining
   end
 
   def set_level(level)
-    @temperature = ROOM_TEMPERATURE - level * 5
+    @temperature = @room_temperature - level * 5
   end
 
 end
