@@ -10,4 +10,8 @@ class WaterDispenser
     reservoir.drain(vessel.volume)
   end
 
+  def current_volume
+    @reservoir.current_water_volume
+  end
+
 end

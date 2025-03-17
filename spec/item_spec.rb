@@ -6,5 +6,4 @@ describe 'An item of food or a beverage' do
     expect(item.name).to eq "fake"
     expect(item.volume).to eq 50
   end
-
 end
